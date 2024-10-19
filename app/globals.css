@@ -24,8 +24,13 @@ section {
     font-weight: 300;
 }
 
+/* label {
+    margin: 1em;
+} */
+
 input {
     color: black;
+    margin: 1em;
 }
 
 a {
