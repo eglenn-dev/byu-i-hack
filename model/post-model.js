@@ -27,13 +27,14 @@ export async function getAllPins() {
     let returnData = [];
     const snapshot = await db.ref("posts").get();
     const data = snapshot.val();
+    const random = Math.random() * 0.008 + 0.001
     Object.keys(data).forEach((key) => {
         returnData.push({
             name: `Report: ${data[key].type}`,
             category: data[key].type,
             position: {
-                lat: data[key].location.lat,
-                lng: data[key].location.lng,
+                lat: parseFloat(data[key].location.lat) + random,
+                lng: parseFloat(data[key].location.lng) - random,
             }
         });
     });
