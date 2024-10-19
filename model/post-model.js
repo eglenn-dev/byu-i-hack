@@ -23,6 +23,16 @@ export async function createDbPost(post, username) {
     return postRef.key;
 }
 
+export async function getAllPosts() {
+    const snapshot = await db.ref("posts").get();
+    return snapshot.val();
+}
+
+export async function getRecentPosts() {
+    const snapshot = await db.ref("posts").limitToLast(5).get();
+    return snapshot.val();
+}
+
 export async function getAllPins() {
     let returnData = [];
     const snapshot = await db.ref("posts").get();
@@ -38,6 +48,5 @@ export async function getAllPins() {
             }
         });
     });
-    console.log(returnData);
     return returnData;
 }
