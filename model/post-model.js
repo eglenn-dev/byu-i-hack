@@ -55,6 +55,5 @@ export async function getAllPins() {
       },
     });
   });
-  console.log(returnData);
   return returnData;
 }

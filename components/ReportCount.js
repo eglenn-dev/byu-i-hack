@@ -2,7 +2,6 @@ import { postCount } from "@/model/post-model";
 
 const ReportCount = async () => {
   const count = await postCount();
-  console.log(`${count}`);
   return (
     <div className="mt-16">
       <h1 className="text-5xl w-screen text-center">

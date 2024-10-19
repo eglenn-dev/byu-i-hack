@@ -15,7 +15,6 @@ const GeminiCall = () => {
         }
         const responseData = await response.json();
         setData(responseData.response.candidates[0].content.parts[0].text);
-        console.log(responseData.response.candidates[0].content.parts[0].text);
       } catch (err) {
         setError(err);
       } finally {
