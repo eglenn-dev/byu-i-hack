@@ -1,5 +1,5 @@
 // pages/map.js
-import MapComponent from "./Map";
+import MapComponent from "../../components/Map";
 
 const MapPage = () => {
   const API_KEY = process.env.GOOGLE_MAPS_API_KEY; // Accessing the API key from environment variables

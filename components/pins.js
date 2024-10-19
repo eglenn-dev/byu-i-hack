@@ -1,4 +1,4 @@
-import pins from "../../lib/pins.json";
+import pins from "../lib/pins.json";
 
 export const Pins = {};
 
