@@ -117,11 +117,11 @@ const MapComponent = ({ apiKey, lat = 43.8255195, lng = -111.7940202 }) => {
   }, []);
 
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-[400px]">
       <APIProvider apiKey={apiKey}>
         <Map
           mapId={"2b7e317fcb176699"}
-          style={{ width: "100%", height: "50%" }}
+          style={{ width: "100%", height: "100%" }}
           defaultCenter={{ lat, lng }}
           defaultZoom={14}
           gestureHandling={"greedy"}
@@ -134,17 +134,19 @@ const MapComponent = ({ apiKey, lat = 43.8255195, lng = -111.7940202 }) => {
       </APIProvider>
 
       <div className="w-screen text-center mt-2">
-        <select
-          className=" border-white rounded-full bg-gray-500 p-2"
-          onChange={handleCategoryChange}
-        >
-          <option value="">All categories</option>
-          {categories.map((category) => (
-            <option key={category.key} value={category.key}>
-              {category.label} ({category.count})
-            </option>
-          ))}
-        </select>
+        <div className="inline-block p-[2px] rounded-md bg-gradient-to-r from-blue-500 to-green-500">
+          <select
+            className="border-2 border-transparent bg-slate-900 text-white rounded-md p-2"
+            onChange={handleCategoryChange}
+          >
+            <option value="">All categories</option>
+            {categories.map((category) => (
+              <option key={category.key} value={category.key}>
+                {category.label} ({category.count})
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <ControlPanel

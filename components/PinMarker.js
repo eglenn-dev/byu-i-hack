@@ -15,7 +15,11 @@ const PinMarker = ({ pin, onClick, setMarkerRef }) => {
       ref={ref}
       onClick={handleClick}
     >
-      <span className="marker-clustering-tree">🚨</span>
+      {pin.category === "neighborhood" ? (
+        <span className="marker-clustering-tree">🚨</span>
+      ) : (
+        <span className="marker-clustering-tree">🚗</span>
+      )}
     </AdvancedMarker>
   );
 };
