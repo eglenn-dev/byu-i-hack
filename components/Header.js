@@ -32,7 +32,7 @@ const Header = () => {
 
       {/* below this is on right side */}
       <div className="flex flex-row">
-        <Link href="/dashboard/form" className="hidden md:block">
+        <Link href="/dashboard/form" className="hidden md:mr-10 md:block">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="3em"

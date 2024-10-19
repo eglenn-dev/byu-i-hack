@@ -4,9 +4,9 @@ const ReportCount = async () => {
   const count = await postCount();
   console.log(`${count}`);
   return (
-    <div className="w-screen mt-16 hidden md:block">
-      <h1 className="text-5xl pl-3 m-auto pr-3">
-        {count}+ <span className="text-3xl">Reports</span>
+    <div className="mt-16">
+      <h1 className="text-5xl w-screen text-center">
+        {count}+ <span className="text-3xl">Reports & counting</span>
       </h1>
     </div>
   );

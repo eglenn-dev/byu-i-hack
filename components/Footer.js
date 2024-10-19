@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="flex flex-row items-center justify-center w-full md:hidden">
+    <div className="flex flex-row items-center justify-center absolute bottom-5 w-full md:hidden">
       <Link
         href="/dashboard/form"
         className="m-auto border-2 border-white rounded-full"
