@@ -1,15 +1,15 @@
 import { getPins } from "@/app/dashboard/actions";
-const pins = getPins();
 
 export const Pins = {};
 
 export const CategoryData = {};
 
-for (let i = 0; i < pins.length; i++) {
-  Pins[i] = { key: `pin-${i}`, ...pins[i] };
-}
 
 export async function loadPinsDataset() {
+  const pins = getPins();
+  for (let i = 0; i < pins.length; i++) {
+    Pins[i] = { key: `pin-${i}`, ...pins[i] };
+  }
   return new Promise((resolve) => {
     setTimeout(() => resolve(pins), 500);
   });
