@@ -20,9 +20,9 @@ export default function SubmissionForm() {
       }}
     >
       <label className="flex flex-col">
-        <span className="text-gray-700">Location</span>
+        {/* <span className="text-slate-400">Location</span> */}
         <input
-          className="h-11 p-2 rounded-lg border border-gray-300 text-black"
+          className="h-11 rounded-lg border border-gray-300 text-black"
           required
           type="text"
           id="location"
@@ -30,8 +30,8 @@ export default function SubmissionForm() {
           placeholder="123 Street, ST 12345"
         />
       </label>
-      <div className="flex flex-col gap-2">
-        <span className="text-gray-700">Type</span>
+      <div className="flex flex-col g">
+        {/* <span className="text-slate-400">Type</span> */}
         <div className="flex items-center">
           <label className="mr-4">
             <input
@@ -61,9 +61,9 @@ export default function SubmissionForm() {
         </div>
       </div>
       <label className="flex flex-col">
-        <span className="text-gray-700">Description</span>
+        {/* <span className="text-slate-400">Description</span> */}
         <textarea
-          className="h-48 p-3 rounded-lg border border-gray-300 text-black"
+          className="h-48 p-3 rounded-lg border text-center border-gray-300 text-black"
           required
           style={{ resize: "none" }}
           id="description"
@@ -72,10 +72,10 @@ export default function SubmissionForm() {
         />
       </label>
       <label className="flex flex-col">
-        <span className="text-gray-700">Date of Incident</span>
+        {/* <span className="text-slate-400">Date of Incident</span> */}
         <input
           required
-          className="h-11 p-2 rounded-lg border border-gray-300 text-black"
+          className="h-11 rounded-lg border text-center border-gray-300 text-black"
           type="date"
           id="date"
           name="date"
@@ -84,9 +84,10 @@ export default function SubmissionForm() {
       {type === "vehicle" && (
         <div>
           <label className="flex flex-col">
-            <span className="text-gray-700">License Plate</span>
+            {/* <span className="text-slate-400">License Plate</span> */}
             <input
-              className="h-11 p-2 rounded-lg border border-gray-300 text-black"
+              className="h-11 rounded-lg border text-center border-gray-300 text-black"
+              placeholder="License Plate"
               required
               type="text"
               id="license"
@@ -98,9 +99,9 @@ export default function SubmissionForm() {
       {type === "neighborhood" && (
         <div>
           <label className="flex flex-col">
-            <span className="text-gray-700">Category</span>
+            <span className="text-slate-400">Category</span>
             <select
-              className="h-11 p-2 rounded-lg border border-gray-300 text-black"
+              className="h-11 rounded-lg border border-gray-300 text-black"
               required
               id="category"
               name="category"
