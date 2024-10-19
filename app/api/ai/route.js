@@ -22,7 +22,7 @@ async function aiGeneration(input) {
         });
 
         const result = await model.generateContent(
-            `Please summarize the following info while making is suitable to all users. Return only the summary and keep it about 100 words: "${input}"`
+            `This is for a neighborhood watch app that takes input from community members. With the following input, make it suitable for all users and summarize these recent reports into about a 100 word summary, return only the summary: "${input}"`
         );
         return result;
     } catch (e) {
