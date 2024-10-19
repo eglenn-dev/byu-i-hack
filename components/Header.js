@@ -25,14 +25,14 @@ const Header = () => {
             />
           </svg>
         </div>
-        <h1 className="text-5xl ml-2 pt-3 pb-3 bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
+        <h1 className="text-3xl md:text-5xl ml-2 pt-3 pb-3 bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
           Neigbor View
         </h1>
       </div>
 
       {/* below this is on right side */}
       <div className="flex flex-row">
-        <Link href="/dashboard/form">
+        <Link href="/dashboard/form" className="hidden md:block">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="3em"
@@ -55,6 +55,7 @@ const Header = () => {
             ></path>
           </svg>
         </Link>
+
         <form
           action={async () => {
             "use server";

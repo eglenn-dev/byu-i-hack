@@ -30,7 +30,7 @@ const GeminiCall = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div className=" w-4/6 m-auto p-6 rounded-lg">
+    <div className="md:w-4/6 m-auto p-6 rounded-lg">
       <h3 className="text-2xl m-auto w-screen font-semibold text-white mb-4">
         AI Summary
       </h3>
