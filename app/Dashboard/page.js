@@ -1,9 +1,9 @@
 // pages/map.js
 import dynamic from "next/dynamic";
-// import Pin from "../../lib/";
+import Map from "./Map";
 
 // Dynamically import the MapComponent with SSR disabled
-const MapComponent = dynamic(() => import("./Map"), { ssr: false });
+const MapComponent = dynamic(() => Map, { ssr: false });
 
 const MapPage = () => {
   const API_KEY = process.env.GOOGLE_MAPS_API_KEY; // Accessing the API key from environment variables
