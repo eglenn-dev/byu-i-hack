@@ -40,7 +40,7 @@ const MapComponent = ({ apiKey, lat = 43.8255195, lng = -111.7940202 }) => {
         <Map
           mapId={"2b7e317fcb176699"}
           defaultCenter={{ lat, lng }}
-          defaultZoom={14}
+          defaultZoom={12}
           gestureHandling={"greedy"}
           disableDefaultUI
         >
