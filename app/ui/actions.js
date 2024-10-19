@@ -1,13 +1,10 @@
 "use server";
-import {
-    checkUniqueEmail,
-    createUserIfUnique,
-    getUsernameByKey,
-} from "@/model/accounts-model";
+import { checkUniqueEmail, createUserIfUnique, getUsernameByKey } from "@/model/accounts-model";
 import { login } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/session";
 import { createDbPost } from "@/model/post-model";
+import { getLatLngFromAddress } from "@/lib/latLong";
 
 export async function loginCaptcha(formData) {
     const responseToken = formData.get("g-recaptcha-response");
@@ -95,8 +92,10 @@ export async function createPost(formData) {
         )
     ) return;
 
+    const getLatLng = await getLatLngFromAddress(formData.get("location")?.toString() || "");
+
     const post = {
-        location: formData.get("location")?.toString() || "",
+        location: { lat: getLatLng.lat, lng: getLatLng.lng },
         description: formData.get("description")?.toString() || "",
         date: formData.get("date")?.toString() || "",
         type: formData.get("type")?.toString() || "",

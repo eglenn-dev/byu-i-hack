@@ -22,3 +22,21 @@ export async function createDbPost(post, username) {
     // Returning the post key
     return postRef.key;
 }
+
+export async function getAllPins() {
+    let returnData = [];
+    const snapshot = await db.ref("posts").get();
+    const data = snapshot.val();
+    Object.keys(data).forEach((key) => {
+        returnData.push({
+            name: `Report: ${data[key].type}`,
+            category: data[key].type,
+            position: {
+                lat: data[key].location.lat,
+                lng: data[key].location.lng,
+            }
+        });
+    });
+    console.log(returnData);
+    return returnData;
+}

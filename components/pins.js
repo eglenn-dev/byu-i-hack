@@ -1,4 +1,5 @@
-import pins from "../lib/pins.json";
+import { getPins } from "@/app/dashboard/actions";
+const pins = getPins();
 
 export const Pins = {};
 
