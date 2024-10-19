@@ -7,6 +7,7 @@ import {
 import { login } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/session";
+import { createDbPost } from "@/model/post-model";
 
 export async function loginCaptcha(formData) {
     const responseToken = formData.get("g-recaptcha-response");
@@ -80,4 +81,31 @@ export async function deleteUserPost(postKey) {
 
 export async function getRating(postKey) {
     return await getAverageRating(postKey);
+}
+
+export async function createPost(formData) {
+    const session = await getSession();
+    if (!session) return;
+    if (
+        !(
+            formData.get("location") &&
+            formData.get("description") &&
+            formData.get("date") &&
+            formData.get("type")
+        )
+    ) return;
+
+    const post = {
+        location: formData.get("location")?.toString() || "",
+        description: formData.get("description")?.toString() || "",
+        date: formData.get("date")?.toString() || "",
+        type: formData.get("type")?.toString() || "",
+        license: formData.get("license")?.toString() || "",
+        category: formData.get("category")?.toString() || "",
+    };
+    if (await createDbPost(post, session.user.username)) {
+        redirect("/dashboard");
+    } else {
+        return null;
+    }
 }

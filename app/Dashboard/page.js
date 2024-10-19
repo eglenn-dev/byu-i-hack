@@ -1,6 +1,6 @@
 // pages/map.js
 import dynamic from "next/dynamic";
-import Pin from "../../lib/";
+// import Pin from "../../lib/";
 
 // Dynamically import the MapComponent with SSR disabled
 const MapComponent = dynamic(() => import("../ui/Map"), { ssr: false });
