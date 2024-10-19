@@ -9,15 +9,15 @@ import { redirect } from "next/navigation";
 
 const MapPage = async () => {
   const session = await getSession();
-  if (!session) redirect('/');
+  if (!session) redirect("/");
   const API_KEY = process.env.GOOGLE_MAPS_API_KEY; // Accessing the API key from environment variables
 
   return (
     <div>
       <Header />
       <MapComponent apiKey={API_KEY} />
-      <GeminiCall />
       <ReportCount />
+      <GeminiCall />
       <Footer />
     </div>
   );

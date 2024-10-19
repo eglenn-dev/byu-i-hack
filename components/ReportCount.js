@@ -5,7 +5,7 @@ const ReportCount = async () => {
   console.log(`${count}`);
   return (
     <div className="w-screen mt-16">
-      <h1 className="text-5xl pl-3 pr-3">
+      <h1 className="text-5xl pl-3 m-auto pr-3">
         {count}+ <span className="text-3xl">Reports</span>
       </h1>
     </div>

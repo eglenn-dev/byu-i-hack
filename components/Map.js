@@ -134,7 +134,7 @@ const MapComponent = ({ apiKey, lat = 43.8255195, lng = -111.7940202 }) => {
       </APIProvider>
 
       <div className="w-screen text-center mt-2">
-        <div className="inline-block p-[2px] rounded-md bg-gradient-to-r from-blue-500 to-green-500">
+        <div className="inline-block p-[2px] rounded-md bg-gradient-to-r from-blue-500 to-green-500 md:top-5 absolute">
           <select
             className="border-2 border-transparent bg-slate-900 text-white rounded-md p-2"
             onChange={handleCategoryChange}
