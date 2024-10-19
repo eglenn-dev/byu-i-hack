@@ -26,7 +26,7 @@ const Header = () => {
           </svg>
         </div>
         <h1 className="text-3xl md:text-5xl ml-2 pt-3 pb-3 bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
-          Neigbor View
+          Neighbor View
         </h1>
       </div>
 
