@@ -18,12 +18,13 @@ export default function SubmissionForm() {
         }}>
             <label className="flex flex-col">
                 <span>Location</span>
-                <input className="h-11 p-2 rounded-full" required type="text" id="location" name="location" placeholder="123 Street, ST 12345" />
+                <input className="h-11 p-2 rounded-full text-black" required type="text" id="location" name="location" placeholder="123 Street, ST 12345" />
             </label>
             <div className="flex flex-col gap-4">
                 <label className="mr-auto ml-auto">
                     <input
                         required
+                        className="text-black"
                         type="radio"
                         id="vehicle"
                         name="type"
@@ -44,27 +45,27 @@ export default function SubmissionForm() {
                     />
                     Neighborhood
                 </label>
-                <label className="flex flex-col">
+                <label className="flex flex-col text-black">
                     Description
                     <textarea className="h-48 p-3 w-82 rounded-3xl" required style={{ resize: "none" }} id="description" name="description" placeholder="Tell us about what happened..." />
                 </label>
                 <label className="flex flex-col">
                     Date of Incident
-                    <input required type="date" id="date" name="date" />
+                    <input required className="text-black" type="date" id="date" name="date" />
                 </label>
             </div>
             {type === "vehicle" ? (
                 <div>
                     <label className="flex flex-col">
                         License Plate
-                        <input required={type === "vehicle"} type="text" id="license" name="license" />
+                        <input className="text-black" required={type === "vehicle"} type="text" id="license" name="license" />
                     </label>
                 </div>
             ) : (type === "neighborhood" ? (
                 <div>
                     <label className="flex flex-col">
                         Category
-                        <select required={type === "neighborhood"} id="category" name="category">
+                        <select className="text-black" required={type === "neighborhood"} id="category" name="category">
                             <option value="">Select one</option>
                             <option value="domestic-violence">Domestic Violence</option>
                             <option value="vandalism">Vandalism</option>
