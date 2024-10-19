@@ -27,8 +27,6 @@ const GeminiCall = () => {
   }, []);
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-
   return (
     <div className="overflow-hidden mt-5 md:w-4/6 m-auto rounded-lg text-gray-300 pr-4 pl-4 relative">
       <h1 className="text-2xl m-auto w-screen font-semibold text-white">
