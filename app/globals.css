@@ -7,6 +7,14 @@ body {
     color: white;
 }
 
+input {
+    color: black;
+}
+
+a {
+    color: inherit;
+}
+
 .marker-clustering-tree {
     font-size: 2rem;
 }
