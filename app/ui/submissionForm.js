@@ -65,7 +65,7 @@ export default function SubmissionForm() {
                 <div>
                     <label className="flex flex-col">
                         Category
-                        <select className="text-black" required={type === "neighborhood"} id="category" name="category">
+                        <select className="text-black p-2 rounded-md" required={type === "neighborhood"} id="category" name="category">
                             <option value="">Select one</option>
                             <option value="domestic-violence">Domestic Violence</option>
                             <option value="vandalism">Vandalism</option>
