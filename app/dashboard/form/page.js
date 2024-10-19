@@ -25,8 +25,8 @@ export default async function FormPage() {
       {/* Center the submission form */}
       <div className="m-auto bg-slate-900 text-center rounded-md">
         {/* Container for the submission form */}
-        <h1 className="text-5xl font-bold text-white mb-4">Report Form</h1>
-        <p className="text-center mb-6 text-white">
+        <h1 className="text-5xl font-bold text-white p-3">Report Form</h1>
+        <p className="text-center w-4/5 m-auto text-white">
           Please be aware that these form submissions are not public, and all
           data used is slightly modified to hide identity.
         </p>

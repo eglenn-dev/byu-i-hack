@@ -32,19 +32,19 @@ const ClusteredPinMarkers = ({ pins }) => {
   // Track markers currently on the map
   const setMarkerRef = useCallback((marker, key) => {
     setMarkers((currentMarkers) => {
-      if (
-        (marker && currentMarkers[key]) ||
-        (!marker && !currentMarkers[key])
-      ) {
+      // If the marker exists and is the same, do nothing
+      if (marker && currentMarkers[key] === marker) {
         return currentMarkers;
       }
 
+      // If the marker is defined, add or update it
       if (marker) {
         return { ...currentMarkers, [key]: marker };
-      } else {
-        const { [key]: _, ...newMarkers } = currentMarkers;
-        return newMarkers;
       }
+
+      // If the marker is removed, create a new object without that key
+      const { [key]: _, ...newMarkers } = currentMarkers;
+      return newMarkers;
     });
   }, []);
 
@@ -67,14 +67,20 @@ const ClusteredPinMarkers = ({ pins }) => {
         />
       ))}
 
-      {selectedTreeKey && (
-        <InfoWindow
-          anchor={markers[selectedTreeKey]}
-          onCloseClick={handleInfoWindowClose}
-        >
-          {selectedTree?.name}
-        </InfoWindow>
-      )}
+      {selectedTree &&
+        markers[selectedTreeKey] && ( // Ensure selectedTree is valid and marker exists
+          <InfoWindow
+            anchor={markers[selectedTreeKey]}
+            onCloseClick={handleInfoWindowClose}
+          >
+            {/* Display relevant details from the selected pin */}
+            <div>
+              <h2>{selectedTree.type}</h2>
+              <p>{selectedTree.description}</p>
+              {/* Add more details as needed */}
+            </div>
+          </InfoWindow>
+        )}
     </>
   );
 };
