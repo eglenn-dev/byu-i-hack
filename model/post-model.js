@@ -48,6 +48,7 @@ export async function getAllPins() {
     returnData.push({
       name: `Report: ${data[key].type}`,
       category: data[key].type,
+      description: data[key].description,
       position: {
         lat: parseFloat(data[key].location.lat) + random,
         lng: parseFloat(data[key].location.lng) - random,
